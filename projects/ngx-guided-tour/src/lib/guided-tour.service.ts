@@ -133,7 +133,7 @@ export class GuidedTourService {
             if (!this._currentTour.useOrb) {
                 this.dom.body.classList.add('tour-open');
             }
-            if (this._currentTour.steps[this._currentTourStepIndex].action) {
+            if (this._currentTour.steps[this._currentTourStepIndex].action && !this._currentTour.useOrb) {
                 this._currentTour.steps[this._currentTourStepIndex].action();
             }
             if (this._checkSelectorValidity()) {

@@ -231,6 +231,9 @@ export class GuidedTourComponent implements AfterViewInit, OnDestroy {
         this.guidedTourService.activateOrb();
         if (this.currentTourStep && this.currentTourStep.selector) {
             this.scrollToAndSetElement();
+            if (this.currentTourStep.action) {
+                this.currentTourStep.action();
+            }
         }
     }
 
